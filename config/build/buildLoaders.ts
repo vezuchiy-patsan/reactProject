@@ -32,7 +32,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     return [
         typeScriptLoaders,
-        cssLoader,
+        cssLoader
     ]
 
 }
