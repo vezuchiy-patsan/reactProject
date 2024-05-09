@@ -4,7 +4,7 @@ export function classNames(cls: string, mods: Mobs = {}, additional: string[] = 
         cls,
         ...additional.filter(Boolean),
         Object.entries(mods)
-            .filter(([ value, bool]) => Boolean(bool))
+            .filter(([ __, bool]) => Boolean(bool))
             .map(([className]) => className),
     ]
         .join(' ');

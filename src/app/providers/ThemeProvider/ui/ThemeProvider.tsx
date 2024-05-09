@@ -16,5 +16,5 @@ export const ThemeProvider:FC = ({children}) => {
         <ThemeContext.Provider value={defaultProps}>
             {children}
         </ThemeContext.Provider>
-    )
-}
+    );
+};
