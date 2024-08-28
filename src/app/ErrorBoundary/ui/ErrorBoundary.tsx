@@ -12,18 +12,18 @@ interface ErrorBoundaryState {
 
 export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoundaryProps) {
-        super(props)
-        this.state = { hasError: false }
+        super(props);
+        this.state = { hasError: false };
     }
 
     static getDerivedStateFromError(error: Error) {
         // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
-        return { hasError: true }
+        return { hasError: true };
     }
 
     componentDidCatch(error:Error, info: ErrorInfo) {
         // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-        console.log(error, info)
+        console.log(error, info);
     }
 
     render() {
@@ -31,9 +31,9 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
         const {children} = this.props;
         if (hasError) {
             // Можно отрендерить запасной UI произвольного вида
-            return  <Suspense fallback=""><PageError/></Suspense>
+            return  <Suspense fallback=""><PageError/></Suspense>;
         }
 
-        return children
+        return children;
     }
 }

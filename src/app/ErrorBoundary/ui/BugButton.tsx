@@ -1,5 +1,5 @@
 import {classNames} from "shared/lib/classNames/className";
-import cls from "./ButButton.module.scss"
+import cls from "./ButButton.module.scss";
 import {useEffect, useState} from "react";
 
 interface BugButtonProps {
@@ -17,5 +17,5 @@ export const BugButton = ({className}: BugButtonProps) => {
             throw new Error();
     } , [error]);
 
-    return(<button onClick={onThrow} className={classNames(cls.ButButton, {}, [className])}>throw Error</button>)
-}
+    return(<button onClick={onThrow} className={classNames(cls.ButButton, {}, [className])}>throw Error</button>);
+};
