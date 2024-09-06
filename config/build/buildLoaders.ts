@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
-import {buildCssLoaders} from "./loaders/buildCssLoaders";
+import {buildCssLoaders} from "./loader/buildCssLoaders";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
@@ -16,16 +16,16 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/i,
                 use: [
             {
-                loader: 'file-loaders',
+                loader: 'file-loader',
             },
         ],
         };
 
 
-    // если не используется typescript используем babel-loaders
+    // если не используется typescript используем babel-loader
     const typeScriptLoaders = {
         test: /\.tsx?$/,
-        loader: 'ts-loaders',
+        loader: 'ts-loader',
         exclude: /node_modules/,
     };
 
@@ -33,7 +33,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(tsx|js|jsx)$/,
             exclude: /node_modules/,
         use: {
-        loader: "babel-loaders",
+        loader: "babel-loader",
             options: {
             presets: ['@babel/preset-env'],
             "plugins": [
