@@ -1,8 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {Button, ThemeButton} from './Button';
-import {classNames} from "shared/lib/classNames/className";
+import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import {Theme} from "app/providers/ThemeProvider";
+// import  "app/styles/index.scss";
 
 export default {
     title: 'shared/Button',
@@ -16,8 +18,9 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Button',
+    children: 'Text',
 };
+
 
 export const Clear = Template.bind({});
 Clear.args = {
@@ -30,4 +33,11 @@ Outline.args = {
     ...Primary.args,
     theme: ThemeButton.OUTLINE,
 };
+export const OutlineDark = Template.bind({});
+OutlineDark.args = {
+    ...Outline.args,
+};
+
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 

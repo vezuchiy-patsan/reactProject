@@ -1,5 +1,5 @@
 .Sidebar {
-    min-height: calc(100% - var(--navbar-height));
+    min-height: inherit;
     width: var(--sidebar-width);
     background: var(--bg-inverted-color);
     position: relative;

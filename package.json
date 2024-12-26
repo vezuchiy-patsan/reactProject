@@ -18,6 +18,15 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@eslint/js": "^9.2.0",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@svgr/webpack": "^6.2.1",
     "@types/jest": "^27.4.1",
     "@types/node": "^20.11.24",
@@ -37,6 +46,7 @@
     "globals": "^15.1.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
+    "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
@@ -58,10 +68,26 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:style": "stylelint \"**/*.scss\"",
     "lint:style:fix": "stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook"
   },
   "keywords": [],
   "author": "Daniil Akhiyan",
   "license": "ISC",
-  "description": "UlbiLearning"
+  "description": "Learn React",
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
+  }
 }
