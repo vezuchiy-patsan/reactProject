@@ -27,3 +27,5 @@ jobs:
         run: npm run lint:style
       - name: unit testing
         run: npm run unit
+      - name: ui test
+        run: npm run test:ui:ci
