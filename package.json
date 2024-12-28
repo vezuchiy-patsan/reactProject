@@ -87,6 +87,9 @@
   "license": "ISC",
   "description": "Learn React",
   "loki": {
+    "looks-same": {
+      "ignoreCaret": true
+    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
